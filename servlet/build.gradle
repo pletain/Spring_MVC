@@ -19,6 +19,12 @@ repositories {
 	mavenCentral()
 }
 
+bootWar {
+	archiveBaseName = '-'
+	archiveFileName = '-.war'
+	archiveVersion = '0.0.0'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
