@@ -19,8 +19,7 @@ public class ModelView {
         this.ViewName = ViewName;
     }
 
-    public Map<String,Object> getModel()
-    {
+    public Map<String,Object> getModel() {
 		return model;
 	}
 
