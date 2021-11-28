@@ -21,7 +21,7 @@ repositories {
 
 bootWar {
 	archiveBaseName = '-'
-	archiveFileName = '-.war'
+	archiveFileName = 'servlet.war'
 	archiveVersion = '0.0.0'
 }
 
