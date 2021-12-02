@@ -26,8 +26,8 @@ public class FrontControllerServletV5 extends HttpServlet{
     private final List<MyHandlerAdapter> handlerAdapters = new ArrayList<>();
 
     public FrontControllerServletV5() {
-        initHandlerMapping();
-        initHandlerAdapters();
+        initHandlerMapping(); //handler 매핑 등록
+        initHandlerAdapters(); //adapters 등록
     }
 
     private void initHandlerAdapters() {
@@ -43,13 +43,16 @@ public class FrontControllerServletV5 extends HttpServlet{
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
+        // request URI로 handler 추출
         Object handler = getHandler(request);
         if (handler == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
 
+        //handlerAdapters 중에서 handler를 지원하는 adpater 추출
         MyHandlerAdapter adapter = getHandlerAdapter(handler);
+        //adapter를 이용해서 hanlder 호출
         ModelView mv = adapter.handle(request, response, handler);
 
         MyView view = viewResolver(mv.getViewName());
