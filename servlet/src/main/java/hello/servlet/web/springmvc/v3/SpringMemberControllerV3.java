@@ -13,7 +13,7 @@ import hello.servlet.domain.member.Member;
 import hello.servlet.domain.member.MemberRepository;
 
 @Controller
-@RequestMapping("/springmvcv3/members")
+@RequestMapping("/springmvc/v3/members")
 public class SpringMemberControllerV3 {
     
     private MemberRepository memberRepository = MemberRepository.getInstance();
